@@ -7,7 +7,7 @@ script:
   - docker images pulsardockerhub/react-example
 
 before_deploy:
-  - docker login -u Pulsar -p dockerhub
+  - docker login -u pulsardockerhub -p dockerhub
 
 deploy:
   provider: script
