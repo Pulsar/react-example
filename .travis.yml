@@ -3,4 +3,14 @@ services:
   - docker
 
 script:
-  - docker build -t react-app .
+  - docker build -t Pulsar/react-example .
+  - docker images Pulsar/react-example
+
+before_deploy:
+  - docker login -u Pulsar -p dockerhub
+
+deploy:
+  provider: script
+  script: docker push Pulsar/react-example2
+  on:
+    branch: master
